@@ -8,20 +8,34 @@ MovieSelection.prototype.addTickets = function (ticket) {
   this.tickets.push(ticket);
 }
 
-
-
-
 function Tickets(movie, time, age) {
   this.movie = movie,
   this.time = time,
   this.age = age
 }
 
-Tickets.prototype.getPrice = function() {
-  tickets.forEach(function(ticket) {
-    console.log(ticket);
-    return this.movie + " " + this.time + " " + this.age;
-  })
+function getPrice(movieSelection) {
+  var totalPrice = 0;
+  var moviePrice = 0;
+  var timePrice = 0;
+  var totalMoviePrice = 0;
+  var totalTimePrice = 0;
+  // var ageDiscount = 0;
+  // var totalAgeDiscount = 0;
+  movieSelection.tickets.forEach(function(ticket) {
+    totalMoviePrice = moviePrice += parseInt(ticket.movie);
+    totalTimePrice = timePrice += parseInt(ticket.time);
+    parseInt(ticket.age);
+    if (ticket.age < 12 || ticket.age >= 65) {
+      return totalPrice - 2;
+    } else {
+    return totalPrice;
+    } 
+  // totalAgeDiscount = ageDiscount -= parseInt(ticket.age);
+  // console.log(totalPrice);
+  });
+  totalPrice = totalMoviePrice + totalTimePrice
+  return console.log(totalPrice);
 }
 
 function displayTicketDetails(movieSelectionToDisplay) {
@@ -46,22 +60,9 @@ $(document).ready(function() {
     $("input#age").val("");
     var newTickets = new Tickets(inputtedMovie, inputtedTime, inputtedAge);
     movieSelection.addTickets(newTickets);
+    console.log(movieSelection)
+    getPrice(movieSelection);
     displayTicketDetails(movieSelection);
     $("#summary").show();
-    console.log(movieSelection);
   });
 });
-
-
-
-// function getPrice() {
-//   var price = 0;
-//   price + newTickets.inputtedMove
-// }
-
-// function ageGet(age) {
-//   if (age < 12 || age >= 65) {
-//     return price - 2;
-//   } else
-//   return price
-// }
