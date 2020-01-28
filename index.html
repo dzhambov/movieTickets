@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Movie Tickets</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movies</h1>
+      <form id="tickets">
+        <select name="movie" id="movie">
+          <option selected>Choose Your Movie</option>
+          <option value="10">Movie 1</option>
+          <option value="12">Movie 2</option>
+          <option value="12">Movie 3</option>
+        </select>
+        <select name="time" id="time">
+          <option selected>Choose Your Time</option>
+          <option value="1">4</option>
+          <option value="2">6</option>
+          <option value="2">8</option>
+        </select>
+        <input type="text" id="age" placeholder="Enter your age:">
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+      
+      <div id="summary">
+        <p>Movie:<span id="new-movie"></span></p>
+        <p>Time:<span id="new-time"></span></p>
+        <p>Age:<span id="new-age"></span></p> 
+        <ul id="output">
+
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
